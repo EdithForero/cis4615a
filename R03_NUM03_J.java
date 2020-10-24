@@ -1,8 +1,8 @@
 
 /** *************************************************************
  * Edith Forero
- * Rule 03. Numeric Types and Operations (NUM) 
- * Noncompliant Code
+ * Rule 03. Numeric Types and Operations (NUM)
+ * Compliant Solution
  * Example CIS4615 HW2
  ************************************************************** */
 import java.io.DataInputStream;
@@ -25,7 +25,7 @@ public class R03_NUM03_J {
         }
     }
 
-    public static int getInteger(DataInputStream is) throws IOException {
-        return is.readInt();
+    public static long getInteger(DataInputStream is) throws IOException {
+        return is.readInt() & 0xFFFFFFFFL; // Mask with 32 one-bits
     }
 }
